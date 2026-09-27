@@ -36,17 +36,17 @@ boxplot(
   main = "BP by Final Decision"
 )  
   
-  hist(
-    df_hosp$Frequency,
-    breaks = seq(0, 1, by = 0.1),
-    xlab = "Visit Frequency",
-    main = "Histogram of Visit Frequency"
-  )
+hist(
+  df_hosp$Frequency,
+  breaks = seq(0, 1, by = 0.1),
+  xlab = "Visit Frequency",
+  main = "Histogram of Visit Frequency"
+)
   
-  hist(
-    df_hosp$BloodPressure,
-    breaks = 8,
-    xlab = "Blood Pressure",
-    main = "Histogram of Blood Pressure"
-  )
+hist(
+  df_hosp$BloodPressure,
+  breaks = 8,
+  xlab = "Blood Pressure",
+  main = "Histogram of Blood Pressure"
+)
   
