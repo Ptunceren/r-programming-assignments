@@ -31,7 +31,8 @@ library(dplyr)
 
 Now that we have our packages selected and current, we will use "load_results()" to pull from the "f1dataR" data. Below you will see the we have pulled
 the most "current"/"2026" season and "last"/"20" round that was raced. This function also allows for the function to utilized like the example I will display
-here = <f1 <-load_results(season = "current", round = "last")> which accepts characters or numeric input. This code would call for the most current racing results from the last known race. We then called for the head() and names() of the "f1" matrix to get a glimpse of the attached variables.
+here = <f1 <-load_results(season = "current", round = "last")> which accepts characters or numeric input. This code would call for the most current racing results
+from the last known race. We then called for the head() and names() of the "f1" matrix to get a glimpse of the attached variables.
 
 
 
@@ -44,10 +45,11 @@ names(f1)
 
 During this time, the Formula 1 organization raced at the 2026 Sao Paulo Grand Prix, which is what our example will consist of data wise. The code chunk
 below is a LaTeX math expression that calculates the net positions gained during the race. In other words, the starting position compared to the final position
-in the race for each driver. For example, Max Verstappen started on the "grid" in the 21st position. He then finished in the 2nd "position" in the race. This resulted in a gain of 19 positions which is displayed under the "delta_p" variable. 
+in the race for each driver. For example, Max Verstappen started on the "grid" in the 21st position. He then finished in the 2nd "position" in the race.
+This resulted in a gain of 19 positions which is displayed under the "delta_p" variable. 
 
 
-```{r}
+```{r LaTeX}
 f1_results <- load_results(season = "current", round = "last") %>%
   mutate(
     grid = as.numeric(grid),
@@ -60,7 +62,8 @@ print(f1_results[, c("driver_id", "delta_p")])
 
 
 Below, we've combined the "f1" data-set with the column "points" and we plot them in conjunction with "driver_id" to produce a scatter-plot using "geom_point()."
-The variable "points" is stored as a character in the data-set, so we use the "as.numeric" function to convert the values as numbers rather than characters to be plotted. The plot uses "driver_id" as our x-axis and "points" as our y-axis to display the amount of points each driver did, or did not collect during this race.
+The variable "points" is stored as a character in the data-set, so we use the "as.numeric" function to convert the values as numbers rather than characters
+to be plotted. The plot uses "driver_id" as our x-axis and "points" as our y-axis to display the amount of points each driver did, or did not collect during this race.
 
 
 ```{r f1 plot}
