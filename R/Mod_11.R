@@ -1,3 +1,14 @@
+tukey.outlier <- function(x) {
+  Q1 <- quantile(x, 0.25)
+  Q3 <- quantile(x, 0.75)
+  IQR_value <- IQR(x)
+  
+  lower <- Q1 - 1.5 * IQR_value
+  upper <- Q3 + 1.5 * IQR_value
+  
+  x >= lower & x <= upper
+}
+
 tukey_multiple <- function(x) {
   outliers <- array(TRUE, dim = dim(x))
   for (j in 1:ncol(x)) {
